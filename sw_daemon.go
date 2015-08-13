@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/codegangsta/cli"
+	"github.com/rocketjourney/swdaemon/model"
 	"os"
 	"time"
 )
@@ -33,6 +34,7 @@ func main() {
 }
 
 func checkIn() {
+	model.InitDB()
 	for {
 		println("check-in")
 		delay := (time.Second * time.Duration(1))
