@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/codegangsta/cli"
 	"github.com/rocketjourney/swdaemon/model"
+	"github.com/rocketjourney/swdaemon/network"
 	"os"
 	"time"
 )
@@ -25,6 +26,7 @@ func main() {
 		println("Starting Daemon for club id: ", c.String("club"))
 	}
 
+	model.InitDB()
 	go checkIn()
 
 	app.Run(os.Args)
@@ -34,9 +36,10 @@ func main() {
 }
 
 func checkIn() {
-	model.InitDB()
+
 	for {
 		println("check-in")
+		network.SendCheck(true)
 		delay := (time.Second * time.Duration(1))
 		time.Sleep(delay)
 	}
