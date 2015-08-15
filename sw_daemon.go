@@ -1,9 +1,9 @@
 package main
 
 import (
+	l4g "code.google.com/p/log4go"
 	"github.com/codegangsta/cli"
 	"github.com/rocketjourney/swdaemon/model"
-	"github.com/rocketjourney/swdaemon/network"
 	"os"
 	"time"
 )
@@ -26,8 +26,13 @@ func main() {
 		println("Starting Daemon for club id: ", c.String("club"))
 	}
 
-	model.InitDB()
-	go checkIn()
+	model := model.Model{}
+	err := model.SetupModel()
+	if err == nil {
+		go startSearch(&model)
+	} else {
+		l4g.Info(err)
+	}
 
 	app.Run(os.Args)
 	msg := <-messages
@@ -35,11 +40,9 @@ func main() {
 	println(msg)
 }
 
-func checkIn() {
-
+func startSearch(m *model.Model) {
 	for {
-		println("check-in")
-		network.SendCheck(true)
+		m.SearchAccess()
 		delay := (time.Second * time.Duration(1))
 		time.Sleep(delay)
 	}
