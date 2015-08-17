@@ -2,10 +2,12 @@ package model
 
 import (
 	l4g "code.google.com/p/log4go"
+	"encoding/json"
 	_ "github.com/denisenkom/go-mssqldb"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/rocketjourney/swdaemon/network"
+	"io/ioutil"
 	"time"
 )
 
@@ -15,7 +17,8 @@ type Model struct {
 }
 
 func (m *Model) SetupModel() error {
-	db, err := gorm.Open("mysql", "root@/sportworld?charset=utf8&parseTime=True&loc=Local")
+	s := m.readSettings()
+	db, err := gorm.Open("mysql", s.User+":"+s.Password+"@tcp("+s.Server+":"+s.Port+")/"+s.DB_name+"?charset=utf8&parseTime=True&loc=Local")
 	db.LogMode(true)
 	m.DB = db
 	m.DateOfLastGet = time.Now()
@@ -41,4 +44,15 @@ func (m *Model) SearchAccess() {
 	network.SendCheck(true)
 	m.DateOfLastGet = time.Now()
 	l4g.Info("%+v", m.DateOfLastGet)
+}
+
+func (m *Model) readSettings() *Settings {
+	dat, _ := ioutil.ReadFile("config.json")
+	settings := Settings{}
+	err := json.Unmarshal(dat, &settings)
+	if err != nil {
+		l4g.Info("error:", err)
+	}
+	l4g.Info("%+v", settings)
+	return &settings
 }
