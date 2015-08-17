@@ -37,13 +37,23 @@ func (m *Model) SetupModel() error {
 }
 
 func (m *Model) SearchAccess() {
-	acceso := Register{}
-	m.DB.First(&acceso)
-	l4g.Info("%+v", acceso)
-	println("check-in")
-	network.SendCheck(true)
+
+	//select * from *table_name* where *datetime_column* >= '01/01/2009'
+	access := []Register{}
+	//m.DB.First(&acceso)
+	const shortForm = "2006-01-02"
+	const hourForm = "3:04"
+	searchDate := m.DateOfLastGet.Format(shortForm)
+	searchHour := m.DateOfLastGet.Format(hourForm)
+
+	m.DB.Where("fecha >= ? and hora > ?", searchDate, searchHour).Find(&access)
+
+	for _, register := range access {
+		l4g.Info("%+v", register)
+		println("check-in")
+		network.SendCheck(true)
+	}
 	m.DateOfLastGet = time.Now()
-	l4g.Info("%+v", m.DateOfLastGet)
 }
 
 func (m *Model) readSettings() *Settings {
