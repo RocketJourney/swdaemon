@@ -6,4 +6,5 @@ type Settings struct {
 	User     string
 	Password string
 	DB_name  string
+	Path     string
 }

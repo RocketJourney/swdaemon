@@ -3,5 +3,6 @@
     "port": "3306",
     "user": "root",
     "password": "",
-    "db_name": "sportworld"
+    "db_name": "sportworld",
+    "path": "http://localhost:4000"
 }

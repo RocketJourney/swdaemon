@@ -1,0 +1,11 @@
+DROP TABLE registroacceso;
+
+CREATE TABLE registroacceso (`isAccesoRegistro` int AUTO_INCREMENT PRIMARY KEY,`idPersona` int,`idUn` int,`fecha` date,`hora` time,`status` int,`carril` int,`idSentido` int,`mensaje` VARCHAR(255),`idEmpleado` int,`idTipoRegistroAcceso` int);
+
+describe registroacceso;
+
+INSERT INTO registroacceso (idPersona,idUn,fecha,hora,status,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2010-01-02','11:12',1,1,0,'Usuario Accesando',6,1);
+
+INSERT INTO registroacceso (idPersona,idUn,fecha,hora,status,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2015-08-19','21:15',1,1,0,'Usuario Accesando',6,1);
+
+
