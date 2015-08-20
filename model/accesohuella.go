@@ -10,14 +10,14 @@ type Register struct {
 	ClubId     int       `gorm:"column:idUn"`
 	Date       time.Time `gorm:"column:fecha"`
 	Hour       string    `gorm:"column:hora"`
-	Status     int       `gorm:"column:status"`
+	Status     int       `gorm:"column:estatus"`
 	Line       int       `gorm:"column:carril"`
-	WayId      bool      `gorm:"column:idSentido"`
+	WayId      int       `gorm:"column:idSentido"`
 	Message    string    `gorm:"column:mensaje"`
 	EmployeeId int       `gorm:"column:idEmpleado"`
 	TypeId     int       `gorm:"column:idTipoRegistroAcceso"`
 }
 
 func (r Register) TableName() string {
-	return "registroacceso"
+	return "accesoregistro"
 }

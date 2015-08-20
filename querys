@@ -1,11 +1,29 @@
-DROP TABLE registroacceso;
+DROP TABLE accesoregistro;
 
-CREATE TABLE registroacceso (`isAccesoRegistro` int AUTO_INCREMENT PRIMARY KEY,`idPersona` int,`idUn` int,`fecha` date,`hora` time,`status` int,`carril` int,`idSentido` int,`mensaje` VARCHAR(255),`idEmpleado` int,`idTipoRegistroAcceso` int);
 
-describe registroacceso;
+CREATE TABLE IF NOT EXISTS `accesoregistro` (
+  `idAccesoRegistro` int(11) NOT NULL AUTO_INCREMENT,
+  `idPersona` int(11) DEFAULT NULL COMMENT 'persona',
+  `idUn` int(11) DEFAULT NULL COMMENT 'club',
+  `fecha` date DEFAULT NULL COMMENT 'fecha',
+  `hora` time DEFAULT NULL COMMENT 'hora',
+  `estatus` int(11) DEFAULT NULL COMMENT 'abrió o no?',
+  `carril` int(11) DEFAULT NULL COMMENT 'carril',
+  `idSentido` int(11) DEFAULT NULL COMMENT 'sentido',
+  `mensaje` varchar(250) DEFAULT NULL COMMENT 'que mensaje entregamos?',
+  `idEmpleado` int(11) DEFAULT NULL,
+  `idTipoRegistroAcceso` int(11) DEFAULT '0',
+  PRIMARY KEY (`idAccesoRegistro`),
+  KEY `idPersona` (`idPersona`),
+  KEY `idUn` (`idUn`),
+  KEY `estatus` (`estatus`),
+  KEY `idSentido` (`idSentido`)
+) ENGINE=InnoDB AUTO_INCREMENT=3297927 DEFAULT CHARSET=latin1 COMMENT='Bitácora de operaciones de acceso.';
 
-INSERT INTO registroacceso (idPersona,idUn,fecha,hora,status,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2015-08-19','4:40',1,1,0,'Usuario Accesando',6,1);
+describe accesoregistro;
 
-INSERT INTO registroacceso (idPersona,idUn,fecha,hora,status,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2015-08-19','4:40',1,1,1,'Usuario Accesando',6,1);
+INSERT INTO accesoregistro (idPersona,idUn,fecha,hora,estatus,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2015-08-20','11:40',1,1,1,'Usuario Accesando',6,1);
+
+INSERT INTO accesoregistro (idPersona,idUn,fecha,hora,estatus,carril,idSentido,mensaje,idEmpleado,idTipoRegistroAcceso) VALUES (1,2,'2015-08-20','11:40',1,1,2,'Usuario Accesando',6,1);
 
 
