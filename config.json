@@ -4,5 +4,8 @@
     "user": "root",
     "password": "",
     "db_name": "sportworld",
-    "path": "http://localhost:4000"
+    "path": "http://localhost:4000",
+    "delay": 1,
+    "query":"fecha >= ? and hora > ?",
+    "timeformat":"15:04:05"
 }

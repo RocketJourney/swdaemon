@@ -15,6 +15,9 @@ type Model struct {
 	DB            gorm.DB
 	DateOfLastGet time.Time
 	Net           network.Network
+	Delay         int
+	Query         string
+	TimeFormat    string
 }
 
 func (m *Model) SetupModel() error {
@@ -25,6 +28,9 @@ func (m *Model) SetupModel() error {
 	m.DB = db
 	m.Net = network.Network{}
 	m.Net.Server = s.Path
+	m.Delay = s.Delay
+	m.Query = s.Query
+	m.TimeFormat = s.Timeformat
 	m.DateOfLastGet = time.Now()
 
 	if err != nil {
@@ -44,11 +50,10 @@ func (m *Model) SearchAccess() {
 
 	access := []Register{}
 	const shortForm = "2006-01-02"
-	const hourForm = "3:04"
 	searchDate := m.DateOfLastGet.Format(shortForm)
-	searchHour := m.DateOfLastGet.Format(hourForm)
+	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
 
-	m.DB.Where("fecha >= ? and hora > ?", searchDate, searchHour).Find(&access)
+	m.DB.Where(m.Query, searchDate, searchHour).Find(&access)
 
 	for _, r := range access {
 		l4g.Info("%+v", r)

@@ -43,7 +43,7 @@ func main() {
 func startSearch(m *model.Model) {
 	for {
 		m.SearchAccess()
-		delay := (time.Second * time.Duration(1))
+		delay := (time.Second * time.Duration(m.Delay))
 		time.Sleep(delay)
 	}
 }
