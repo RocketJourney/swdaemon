@@ -1,11 +1,13 @@
 {
-    "server": "localhost",
+    "server": "187.217.176.37",
     "port": "3306",
-    "user": "root",
-    "password": "",
-    "db_name": "sportworld",
-    "path": "http://localhost:4000",
-    "delay": 1,
+    "user": "myfelempleado",
+    "password": "myadmfelempsw",
+    "db_name": "sw",
+    "path": "http://staging.rocketjourney.com",
+    "delay": 10,
     "query":"fecha >= ? and hora > ?",
-    "timeformat":"15:04:05"
+    "timeformat":"15:04:05",
+    "standbystart":"5:30",
+    "standbyend":"11:00"
 }

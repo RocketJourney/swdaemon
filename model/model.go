@@ -8,16 +8,22 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/rocketjourney/swdaemon/network"
 	"io/ioutil"
+	"strconv"
+	"strings"
 	"time"
 )
 
 type Model struct {
-	DB            gorm.DB
-	DateOfLastGet time.Time
-	Net           network.Network
-	Delay         int
-	Query         string
-	TimeFormat    string
+	DB                 gorm.DB
+	DateOfLastGet      time.Time
+	Net                network.Network
+	Delay              int
+	Query              string
+	TimeFormat         string
+	StandByStartHour   int
+	StandByStartMinute int
+	StandByEndHour     int
+	StandByEndMinute   int
 }
 
 func (m *Model) SetupModel() error {
@@ -32,6 +38,12 @@ func (m *Model) SetupModel() error {
 	m.Query = s.Query
 	m.TimeFormat = s.Timeformat
 	m.DateOfLastGet = time.Now()
+	startHour := strings.Split(s.Standbystart, ":")
+	endHour := strings.Split(s.Standbyend, ":")
+	m.StandByStartHour, _ = strconv.Atoi(startHour[0])
+	m.StandByStartMinute, _ = strconv.Atoi(startHour[1])
+	m.StandByEndHour, _ = strconv.Atoi(endHour[0])
+	m.StandByEndMinute, _ = strconv.Atoi(endHour[1])
 
 	if err != nil {
 		l4g.Info(err)
@@ -53,7 +65,7 @@ func (m *Model) SearchAccess() {
 	searchDate := m.DateOfLastGet.Format(shortForm)
 	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
 
-	m.DB.Where(m.Query, searchDate, searchHour).Find(&access)
+	m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
 
 	for _, r := range access {
 		l4g.Info("%+v", r)

@@ -42,8 +42,13 @@ func main() {
 
 func startSearch(m *model.Model) {
 	for {
-		m.SearchAccess()
-		delay := (time.Second * time.Duration(m.Delay))
-		time.Sleep(delay)
+		date := time.Now()
+		if date.Hour() >= m.StandByStartHour && date.Hour() < m.StandByEndHour {
+
+		} else {
+			m.SearchAccess()
+			delay := (time.Second * time.Duration(m.Delay))
+			time.Sleep(delay)
+		}
 	}
 }
