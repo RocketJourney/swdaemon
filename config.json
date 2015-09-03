@@ -8,6 +8,6 @@
     "delay": 10,
     "query":"fecha >= ? and hora > ?",
     "timeformat":"15:04:05",
-    "standbystart":"5:30",
-    "standbyend":"11:00"
+    "standbystart":"23:00",
+    "standbyend":"5:30"
 }
