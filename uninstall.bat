@@ -1,0 +1,2 @@
+nssm stop RocketJourneyDaemon
+nssm remove RocketJourneyDaemon confirm
