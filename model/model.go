@@ -75,7 +75,7 @@ func (m *Model) SearchAccess() {
 }
 
 func (m *Model) readSettings() *Settings {
-	dat, _ := ioutil.ReadFile("config.json")
+	dat, _ := ioutil.ReadFile("./config/config.json")
 	settings := Settings{}
 	err := json.Unmarshal(dat, &settings)
 	if err != nil {

@@ -8,6 +8,10 @@ import (
 	"time"
 )
 
+func init() {
+	l4g.LoadConfiguration("config/log_level.xml")
+}
+
 func main() {
 
 	messages := make(chan string)
