@@ -30,7 +30,7 @@ func (m *Model) SetupModel() error {
 	s := m.readSettings()
 	l4g.Info(s)
 	db, err := gorm.Open("mysql", s.User+":"+s.Password+"@tcp("+s.Server+":"+s.Port+")/"+s.DB_name+"?charset=utf8&parseTime=True&loc=Local")
-	db.LogMode(true)
+	db.LogMode(false)
 	m.DB = db
 	m.Net = network.Network{}
 	m.Net.Server = s.Path
@@ -64,12 +64,14 @@ func (m *Model) SearchAccess() {
 	const shortForm = "2006-01-02"
 	searchDate := m.DateOfLastGet.Format(shortForm)
 	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
-	l4g.Trace("Searching access after:", m.DateOfLastGet)
-	m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
-	l4g.Trace("Number of access founded: ", len(access))
+	l4g.Trace("Searching access after: %+v", m.DateOfLastGet)
+	//m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
+	l4g.Info("Perform search:", m.Query, searchDate, searchHour)
+	m.DB.Where(m.Query, searchDate, searchHour).Find(&access)
+	l4g.Info("Number of access found: %+v", len(access))
 	m.DateOfLastGet = time.Now()
 	for _, r := range access {
-		l4g.Info("%+v", r)
+		l4g.Trace("%+v", r)
 		m.Net.SendCheck(r.WayId, r.ClubId, r.UserId)
 	}
 }
