@@ -64,14 +64,14 @@ func (m *Model) SearchAccess() {
 	const shortForm = "2006-01-02"
 	searchDate := m.DateOfLastGet.Format(shortForm)
 	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
-
+	l4g.Trace("Searching access after:", m.DateOfLastGet)
 	m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
-
+	l4g.Trace("Number of access founded: ", len(access))
+	m.DateOfLastGet = time.Now()
 	for _, r := range access {
 		l4g.Info("%+v", r)
 		m.Net.SendCheck(r.WayId, r.ClubId, r.UserId)
 	}
-	m.DateOfLastGet = time.Now()
 }
 
 func (m *Model) readSettings() *Settings {
