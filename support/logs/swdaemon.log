@@ -601,3 +601,35 @@
 [2015/10/16 16:00:12 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:67) Searching access after: 2015-10-16 16:00:11.427639707 -0500 CDT
 [2015/10/16 16:00:12 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:69) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-16, string=16:00:11)
 [2015/10/16 16:00:12 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Number of access found: 0
+[2015/10/17 17:27:28 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).readSettings:90) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw DB_name:sw Path:http://localhost:4000 Delay:10 Query:fecha >= ? and hora > ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/10/17 17:27:28 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:35) &{187.217.176.37 3306 myfelempleado myadmfelempsw sw http://localhost:4000 10 fecha >= ? and hora > ? 15:04:05 23:00 5:30}
+[2015/10/17 17:27:28 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:27:28.430856565 -0500 CDT
+[2015/10/17 17:27:28 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:27:28)
+[2015/10/17 17:27:29 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:27:39 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:27:29.031418383 -0500 CDT
+[2015/10/17 17:27:39 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:27:29)
+[2015/10/17 17:27:39 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:27:41 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).readSettings:90) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw DB_name:sw Path:http://localhost:4000 Delay:10 Query:fecha >= ? and hora > ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/10/17 17:27:41 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:35) &{187.217.176.37 3306 myfelempleado myadmfelempsw sw http://localhost:4000 10 fecha >= ? and hora > ? 15:04:05 23:00 5:30}
+[2015/10/17 17:27:41 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:27:41.550507244 -0500 CDT
+[2015/10/17 17:27:41 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:27:41)
+[2015/10/17 17:27:41 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:27:50 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).readSettings:90) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw DB_name:sw Path:http://localhost:4000 Delay:10 Query:fecha >= ? and hora > ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/10/17 17:27:50 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:35) &{187.217.176.37 3306 myfelempleado myadmfelempsw sw http://localhost:4000 10 fecha >= ? and hora > ? 15:04:05 23:00 5:30}
+[2015/10/17 17:27:51 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:27:50.849092573 -0500 CDT
+[2015/10/17 17:27:51 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:27:50)
+[2015/10/17 17:27:51 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:28:01 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:27:51.111870506 -0500 CDT
+[2015/10/17 17:28:01 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:27:51)
+[2015/10/17 17:28:01 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:28:11 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:28:01.204082517 -0500 CDT
+[2015/10/17 17:28:11 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:28:01)
+[2015/10/17 17:28:11 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0
+[2015/10/17 17:44:02 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).readSettings:90) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw DB_name:sw Path:http://localhost:4000 Delay:10 Query:fecha >= ? and hora > ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/10/17 17:44:02 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:35) &{187.217.176.37 3306 myfelempleado myadmfelempsw sw http://localhost:4000 10 fecha >= ? and hora > ? 15:04:05 23:00 5:30}
+[2015/10/17 17:44:02 CDT] [INFO] (main.func·001:30) Running swdaemon version: 0.2
+[2015/10/17 17:44:02 CDT] [INFO] (main.func·001:31) Swdaemon proccess id: 10763
+[2015/10/17 17:44:02 CDT] [INFO] (main.func·001:32) Starting Daemon for club id: %!(EXTRA string=1)
+[2015/10/17 17:44:02 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:71) Searching access after: 2015-10-17 17:44:02.033260729 -0500 CDT
+[2015/10/17 17:44:02 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=17:44:02)
+[2015/10/17 17:44:02 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Number of access found: 0

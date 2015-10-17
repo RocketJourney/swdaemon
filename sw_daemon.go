@@ -27,7 +27,9 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) {
-		println("Starting Daemon for club id: ", c.String("club"))
+		l4g.Info("Running swdaemon version: %+v", model.VERSION)
+		l4g.Info("Swdaemon proccess id: %+v", os.Getpid())
+		l4g.Info("Starting Daemon for club id: ", c.String("club"))
 	}
 
 	model := model.Model{}

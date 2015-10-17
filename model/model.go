@@ -26,6 +26,10 @@ type Model struct {
 	StandByEndMinute   int
 }
 
+const (
+	VERSION = "0.2"
+)
+
 func (m *Model) SetupModel() error {
 	s := m.readSettings()
 	l4g.Info(s)
