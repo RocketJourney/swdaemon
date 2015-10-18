@@ -27,7 +27,9 @@ type Model struct {
 }
 
 const (
-	VERSION = "0.2"
+	VERSION     = "0.2"
+	SERVER      = "http://staging.rocketjourney.com"
+	UPDATE_PATH = "/swdaemon/version.json"
 )
 
 func (m *Model) SetupModel() error {
