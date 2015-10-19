@@ -4,7 +4,6 @@
     "user": "myfelempleado",
     "password": "myadmfelempsw",
     "db_name": "sw",
-    "path": "http://localhost:4000",
     "delay": 10,
     "query":"fecha >= ? and hora > ?",
     "timeformat":"15:04:05",

@@ -6,7 +6,6 @@ type Settings struct {
 	User         string
 	Password     string
 	DB_name      string
-	Path         string
 	Delay        int
 	Query        string
 	Timeformat   string

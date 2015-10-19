@@ -27,7 +27,7 @@ type Model struct {
 }
 
 const (
-	VERSION     = "0.2"
+	VERSION     = "0.3"
 	SERVER      = "http://staging.rocketjourney.com"
 	UPDATE_PATH = "/swdaemon/version.json"
 )
@@ -39,7 +39,8 @@ func (m *Model) SetupModel() error {
 	db.LogMode(false)
 	m.DB = db
 	m.Net = network.Network{}
-	m.Net.Server = s.Path
+	m.Net.Server = SERVER
+	l4g.Info("Rocket server: %s", m.Net.Server)
 	m.Delay = s.Delay
 	m.Query = s.Query
 	m.TimeFormat = s.Timeformat

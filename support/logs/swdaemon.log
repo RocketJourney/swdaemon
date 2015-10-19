@@ -859,3 +859,34 @@
 [2015/10/17 20:58:37 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:73) Searching access after: 2015-10-17 20:58:27.713502572 -0500 CDT
 [2015/10/17 20:58:37 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:75) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-17, string=20:58:27)
 [2015/10/17 20:58:38 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:77) Number of access found: 0
+[2015/10/19 17:29:45 CDT] [INFO] (main.main:47) Checking for updates ...
+[2015/10/19 17:29:45 CDT] [TRAC] (main.checkForUpdate:78) Starting Updating process
+[2015/10/19 17:29:45 CDT] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:55) Configuration file downloaded
+[2015/10/19 17:29:45 CDT] [INFO] (main.checkForUpdate:93) New SW version available. Downloading: 0.2
+[2015/10/19 17:46:15 CDT] [INFO] (main.main:47) Checking for updates ...
+[2015/10/19 17:46:15 CDT] [TRAC] (main.checkForUpdate:78) Starting Updating process
+[2015/10/19 17:46:16 CDT] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:55) Configuration file downloaded
+[2015/10/19 17:46:16 CDT] [INFO] (main.checkForUpdate:93) New SW version available. Downloading: 0.2
+[2015/10/19 17:46:56 CDT] [INFO] (main.main:47) Checking for updates ...
+[2015/10/19 17:46:56 CDT] [TRAC] (main.checkForUpdate:78) Starting Updating process
+[2015/10/19 17:46:56 CDT] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:55) Configuration file downloaded
+[2015/10/19 17:46:56 CDT] [INFO] (main.checkForUpdate:93) New SW version available. Downloading: 0.2
+[2015/10/19 17:47:23 CDT] [INFO] (main.main:47) Checking for updates ...
+[2015/10/19 17:47:23 CDT] [TRAC] (main.checkForUpdate:78) Starting Updating process
+[2015/10/19 17:47:23 CDT] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:55) Configuration file downloaded
+[2015/10/19 17:47:23 CDT] [INFO] (main.checkForUpdate:105) No new updates founded
+[2015/10/19 17:47:23 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).readSettings:93) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw DB_name:sw Delay:10 Query:fecha >= ? and hora > ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/10/19 17:47:23 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:37) &{187.217.176.37 3306 myfelempleado myadmfelempsw sw 10 fecha >= ? and hora > ? 15:04:05 23:00 5:30}
+[2015/10/19 17:47:24 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:43) Rocket server: http://staging.rocketjourney.com
+[2015/10/19 17:47:24 CDT] [INFO] (main.func·001:42) Running swdaemon version: 0.2
+[2015/10/19 17:47:24 CDT] [INFO] (main.func·001:43) Swdaemon proccess id: 6399
+[2015/10/19 17:47:24 CDT] [INFO] (main.func·001:44) Starting Daemon for club id: %!(EXTRA string=1)
+[2015/10/19 17:47:24 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-10-19 17:47:24.114785789 -0500 CDT
+[2015/10/19 17:47:24 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:76) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-19, string=17:47:24)
+[2015/10/19 17:47:24 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Number of access found: 0
+[2015/10/19 17:47:34 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-10-19 17:47:24.159118448 -0500 CDT
+[2015/10/19 17:47:34 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:76) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-19, string=17:47:24)
+[2015/10/19 17:47:34 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Number of access found: 0
+[2015/10/19 17:47:44 CDT] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-10-19 17:47:34.213480017 -0500 CDT
+[2015/10/19 17:47:44 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:76) Perform search:%!(EXTRA string=fecha >= ? and hora > ?, string=2015-10-19, string=17:47:34)
+[2015/10/19 17:47:44 CDT] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Number of access found: 0
