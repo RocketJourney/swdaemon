@@ -27,7 +27,7 @@ type Model struct {
 }
 
 const (
-	VERSION     = "0.4"
+	VERSION     = "0.5"
 	SERVER      = "https://app.rocketjourney.com"
 	UPDATE_PATH = "/swdaemon/version.json"
 )
@@ -73,10 +73,12 @@ func (m *Model) SearchAccess() {
 	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
 	l4g.Trace("Searching access after: %+v", m.DateOfLastGet)
 	//m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
-	l4g.Info("Perform search:", m.Query, searchDate, searchHour)
-	m.DB.Where(m.Query, searchDate, searchHour).Find(&access)
+	limitDate := time.Now()
+	searchlimitHour := limitDate.Format(m.TimeFormat)
+	l4g.Info("Perform search:", m.Query, searchDate, searchHour, searchlimitHour)
+	m.DB.Where(m.Query, searchDate, searchHour, limitDate).Find(&access)
 	l4g.Info("Number of access found: %+v", len(access))
-	m.DateOfLastGet = time.Now()
+	m.DateOfLastGet = limitDate
 	for _, r := range access {
 		l4g.Trace("%+v", r)
 		m.Net.SendCheck(r.WayId, r.ClubId, r.UserId)

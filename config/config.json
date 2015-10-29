@@ -5,7 +5,7 @@
     "password": "myadmfelempsw",
     "db_name": "sw",
     "delay": 10,
-    "query":"fecha >= ? and hora > ?",
+    "query":"fecha >= ? and hora >= ? and hora < ?",
     "timeformat":"15:04:05",
     "standbystart":"23:00",
     "standbyend":"5:30"
