@@ -1,0 +1,51 @@
+{
+	"ImportPath": "github.com/rocketjourney/swdaemon",
+	"GoVersion": "go1.4.1",
+	"Deps": [
+		{
+			"ImportPath": "bitbucket.org/kardianos/osext",
+			"Comment": "null-9",
+			"Rev": "364fb577de68fb646c4cb39cc0e09c887ee16376"
+		},
+		{
+			"ImportPath": "code.google.com/p/log4go",
+			"Comment": "go.weekly.2012-02-22-1",
+			"Rev": "c3294304d93f48a37d3bed1d382882a9c2989f99"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.0.0-65-g820deef",
+			"Rev": "820deefc9031d101f085ef773425fc6ca7a5363e"
+		},
+		{
+			"ImportPath": "github.com/denisenkom/go-mssqldb",
+			"Rev": "8a0f7eea6c39f77a54e63b1b29386a60b6660cff"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.2-118-g3dd7008",
+			"Rev": "3dd7008ac1529aca1bcd8a9db75228a71ba23cac"
+		},
+		{
+			"ImportPath": "github.com/inconshreveable/go-update",
+			"Rev": "69defadd2df73d10073f3443b4c31643a6f104bc"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Rev": "dd0d4d931f0d6b52e3c8df75496b0a1aaa5667e6"
+		},
+		{
+			"ImportPath": "github.com/kr/binarydist",
+			"Rev": "9955b0ab8708602d411341e55fffd7e0700f86bd"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/hstore",
+			"Comment": "go1.0-cutoff-59-gb269bd0",
+			"Rev": "b269bd035a727d6c1081f76e7a239a1b00674c40"
+		},
+		{
+			"ImportPath": "github.com/qor/inflection",
+			"Rev": "45321e63b98c756df17369c027c1df89298e1288"
+		}
+	]
+}
