@@ -7,6 +7,7 @@ import (
 	"github.com/inconshreveable/go-update"
 	"github.com/rocketjourney/swdaemon/model"
 	"github.com/rocketjourney/swdaemon/network"
+	"net/http"
 	"os"
 	"runtime"
 	"time"
@@ -92,7 +93,7 @@ func checkForUpdate() {
 	if isNewVersionIsAvailable(conf_data) {
 		l4g.Info("New SW version available. Downloading: %s", conf_data.Version)
 		version := conf_data.Versions[conf_data.Version]
-		err, _ := update.New().FromUrl(version[runtime.GOOS])
+		err := doUpdate(version[runtime.GOOS])
 		if err != nil {
 			l4g.Error("Update failed: %v", err)
 			return
@@ -104,6 +105,19 @@ func checkForUpdate() {
 	} else {
 		l4g.Info("No new updates founded")
 	}
+}
+
+func doUpdate(url string) error {
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	err = update.Apply(resp.Body, update.Options{})
+	if err != nil {
+		// error handling
+	}
+	return err
 }
 
 func isNewVersionIsAvailable(conf_data JSONConfig) bool {
