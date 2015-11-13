@@ -3,6 +3,7 @@ package main
 import (
 	l4g "code.google.com/p/log4go"
 	"encoding/json"
+	"fmt"
 	"github.com/codegangsta/cli"
 	"github.com/inconshreveable/go-update"
 	"github.com/rocketjourney/swdaemon/model"
@@ -52,6 +53,7 @@ func main() {
 	err := model.SetupModel()
 	if err == nil {
 		go startSearch(&model)
+		go reportAlive(&model)
 	} else {
 		l4g.Info(err)
 	}
@@ -72,6 +74,17 @@ func startSearch(m *model.Model) {
 			delay := (time.Second * time.Duration(m.Delay))
 			time.Sleep(delay)
 		}
+	}
+}
+
+func reportAlive(m *model.Model) {
+	net := network.Network{}
+	net.Server = model.SERVER
+	pid := fmt.Sprintf("%d", os.Getpid())
+	for {
+		net.ReportAlive(pid)
+		delay := (time.Minute * 10)
+		time.Sleep(delay)
 	}
 }
 

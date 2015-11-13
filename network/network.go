@@ -29,6 +29,18 @@ func (n *Network) SendCheck(way int, club_id int, user_id int) {
 	client.Do(request)
 }
 
+func (n *Network) ReportAlive(pid string) {
+	l4g.Info("Reporting Alive")
+	client := &http.Client{}
+
+	path := n.Server + "/api/v1/swdaemon/" + pid
+	l4g.Info(path)
+	request, _ := http.NewRequest("POST", path, nil)
+	request.Header.Add("Content-Type", "application/json")
+	request.Header.Add("Authorization", "g3QAAAACZAAEZGF0YXQAAAABZAACaWRhAWQABnNpZ25lZG4GAPD6pvVOAQ")
+	client.Do(request)
+}
+
 func (n *Network) GetUpdateFile(config_file string) (*[]byte, error) {
 	response, err := http.Get(config_file)
 
