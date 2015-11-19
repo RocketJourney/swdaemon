@@ -1,0 +1,29 @@
+{
+    "version": "0.6",
+    "changelog": "* Daemon Ready For Production",
+    "versions": {
+        "0.2": {
+            "darwin": "https://s3.rocketjourney.com/swdaemon/darwin/0.2/swdaemon",
+            "windows": "https://s3.rocketjourney.com//swdaemon/windows/0.2/swdaemon.exe"
+        },
+        "0.3": {
+            "darwin": "https://s3.rocketjourney.com/swdaemon/darwin/0.3/swdaemon",
+            "windows": "https://s3.rocketjourney.com/swdaemon/windows/0.3/swdaemon.exe"
+        },
+        "0.4": {
+            "darwin": "https://s3.rocketjourney.com/swdaemon/darwin/0.4/swdaemon",
+            "windows": "https://s3.rocketjourney.com/swdaemon/windows/0.4/swdaemon.exe"
+        },
+        "0.5": {
+            "darwin": "https://s3.rocketjourney.com/swdaemon/darwin/0.5/swdaemon",
+            "windows": "https://s3.rocketjourney.com/swdaemon/windows/0.5/swdaemon.exe"
+        },
+        "0.6": {
+            "darwin": "https://s3.rocketjourney.com/swdaemon/darwin/0.6/swdaemon",
+            "windows": "https://s3.rocketjourney.com/swdaemon/windows/0.6/swdaemon.exe"
+        }
+    },
+    "pinned": {
+        "e331b72617e2a02b6a8d9f24065d1a293b6f99bb": "0.2"
+    }
+}

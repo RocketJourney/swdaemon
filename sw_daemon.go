@@ -54,6 +54,7 @@ func main() {
 	if err == nil {
 		go startSearch(&model)
 		go reportAlive(&model)
+		go scheduledUpdate()
 	} else {
 		l4g.Info(err)
 	}
@@ -77,6 +78,14 @@ func startSearch(m *model.Model) {
 	}
 }
 
+func scheduledUpdate() {
+	for {
+		delay := (time.Minute * 2)
+		time.Sleep(delay)
+		checkForUpdate()
+	}
+}
+
 func reportAlive(m *model.Model) {
 	net := network.Network{}
 	s := m.ReadSettings()
@@ -94,7 +103,7 @@ func reportAlive(m *model.Model) {
 func checkForUpdate() {
 	l4g.Trace("Starting Updating process")
 	net := network.Network{}
-	file_data, err := net.GetUpdateFile(model.SERVER + model.UPDATE_PATH)
+	file_data, err := net.GetUpdateFile(model.UPDATE_SERVER + model.UPDATE_PATH)
 
 	if err != nil {
 		l4g.Trace("Error getting update file")
