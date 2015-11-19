@@ -29,11 +29,11 @@ func (n *Network) SendCheck(way int, club_id int, user_id int) {
 	client.Do(request)
 }
 
-func (n *Network) ReportAlive(pid string) {
+func (n *Network) ReportAlive(pid string, club_id string) {
 	l4g.Info("Reporting Alive")
 	client := &http.Client{}
 
-	path := n.Server + "/api/v1/swdaemon/" + pid
+	path := n.Server + "/api/v1/swdaemon/" + club_id + "/" + pid
 	l4g.Info(path)
 	request, _ := http.NewRequest("POST", path, nil)
 	request.Header.Add("Content-Type", "application/json")

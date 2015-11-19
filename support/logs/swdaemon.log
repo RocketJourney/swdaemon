@@ -987,3 +987,30 @@
 [2015/10/30 07:02:38 CST] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-10-30 07:02:28.341149604 -0600 CST
 [2015/10/30 07:02:38 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Perform search:%!(EXTRA string=fecha >= ? and hora >= ? and hora < ?, string=2015-10-30, string=07:02:28, string=07:02:38)
 [2015/10/30 07:02:38 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:80) Number of access found: 0
+[2015/11/18 19:17:02 CST] [INFO] (main.main:49) Checking for updates ...
+[2015/11/18 19:17:02 CST] [TRAC] (main.checkForUpdate:94) Starting Updating process
+[2015/11/18 19:17:03 CST] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:67) Configuration file downloaded
+[2015/11/18 19:17:03 CST] [INFO] (main.checkForUpdate:121) No new updates founded
+[2015/11/18 19:17:03 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).ReadSettings:93) error:%!(EXTRA *json.UnmarshalTypeError=json: cannot unmarshal number into Go value of type string)
+[2015/11/18 19:17:03 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).ReadSettings:95) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw Club_id: DB_name:sw Delay:10 Query: Timeformat: Standbystart: Standbyend:}
+[2015/11/18 19:17:03 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:37) &{187.217.176.37 3306 myfelempleado myadmfelempsw  sw 10    }
+[2015/11/18 19:19:01 CST] [INFO] (main.main:49) Checking for updates ...
+[2015/11/18 19:19:01 CST] [TRAC] (main.checkForUpdate:95) Starting Updating process
+[2015/11/18 19:19:01 CST] [TRAC] (github.com/rocketjourney/swdaemon/network.(*Network).GetUpdateFile:67) Configuration file downloaded
+[2015/11/18 19:19:01 CST] [INFO] (main.checkForUpdate:122) No new updates founded
+[2015/11/18 19:19:01 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).ReadSettings:95) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw Club_id:15 DB_name:sw Delay:10 Query:fecha >= ? and hora >= ? and hora < ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/11/18 19:19:01 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:37) &{187.217.176.37 3306 myfelempleado myadmfelempsw 15 sw 10 fecha >= ? and hora >= ? and hora < ? 15:04:05 23:00 5:30}
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SetupModel:43) Rocket server: https://app.rocketjourney.com
+[2015/11/18 19:19:02 CST] [INFO] (main.func·001:44) Running swdaemon version: 0.5
+[2015/11/18 19:19:02 CST] [INFO] (main.func·001:45) Swdaemon proccess id: 43890
+[2015/11/18 19:19:02 CST] [INFO] (main.func·001:46) Starting Daemon for club id: %!(EXTRA string=1)
+[2015/11/18 19:19:02 CST] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-11-18 19:19:02.06522576 -0600 CST
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Perform search:%!(EXTRA string=fecha >= ? and hora >= ? and hora < ?, string=2015-11-18, string=19:19:02, string=19:19:02)
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).ReadSettings:95) {Server:187.217.176.37 Port:3306 User:myfelempleado Password:myadmfelempsw Club_id:15 DB_name:sw Delay:10 Query:fecha >= ? and hora >= ? and hora < ? Timeformat:15:04:05 Standbystart:23:00 Standbyend:5:30}
+[2015/11/18 19:19:02 CST] [INFO] (main.reportAlive:83) &{187.217.176.37 3306 myfelempleado myadmfelempsw 15 sw 10 fecha >= ? and hora >= ? and hora < ? 15:04:05 23:00 5:30}
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/network.(*Network).ReportAlive:33) Reporting Alive
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/network.(*Network).ReportAlive:37) https://app.rocketjourney.com/api/v1/swdaemon/15/43890
+[2015/11/18 19:19:02 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:80) Number of access found: 0
+[2015/11/18 19:19:12 CST] [TRAC] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:74) Searching access after: 2015-11-18 19:19:02.06540984 -0600 CST
+[2015/11/18 19:19:12 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:78) Perform search:%!(EXTRA string=fecha >= ? and hora >= ? and hora < ?, string=2015-11-18, string=19:19:02, string=19:19:12)
+[2015/11/18 19:19:12 CST] [INFO] (github.com/rocketjourney/swdaemon/model.(*Model).SearchAccess:80) Number of access found: 0

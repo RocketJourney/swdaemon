@@ -5,6 +5,7 @@
     "password": "myadmfelempsw",
     "db_name": "sw",
     "delay": 10,
+    "club_id": 15,
     "query":"fecha >= ? and hora >= ? and hora < ?",
     "timeformat":"15:04:05",
     "standbystart":"23:00",

@@ -33,7 +33,7 @@ const (
 )
 
 func (m *Model) SetupModel() error {
-	s := m.readSettings()
+	s := m.ReadSettings()
 	l4g.Info(s)
 	db, err := gorm.Open("mysql", s.User+":"+s.Password+"@tcp("+s.Server+":"+s.Port+")/"+s.DB_name+"?charset=utf8&parseTime=True&loc=Local")
 	db.LogMode(false)
@@ -85,7 +85,7 @@ func (m *Model) SearchAccess() {
 	}
 }
 
-func (m *Model) readSettings() *Settings {
+func (m *Model) ReadSettings() *Settings {
 	dat, _ := ioutil.ReadFile("./config/config.json")
 	settings := Settings{}
 	err := json.Unmarshal(dat, &settings)

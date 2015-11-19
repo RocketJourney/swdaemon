@@ -79,10 +79,13 @@ func startSearch(m *model.Model) {
 
 func reportAlive(m *model.Model) {
 	net := network.Network{}
+	s := m.ReadSettings()
+	l4g.Info(s)
 	net.Server = model.SERVER
 	pid := fmt.Sprintf("%d", os.Getpid())
+	club := fmt.Sprintf("%d", s.Club_id)
 	for {
-		net.ReportAlive(pid)
+		net.ReportAlive(pid, club)
 		delay := (time.Minute * 10)
 		time.Sleep(delay)
 	}

@@ -5,6 +5,7 @@ type Settings struct {
 	Port         string
 	User         string
 	Password     string
+	Club_id      int
 	DB_name      string
 	Delay        int
 	Query        string
