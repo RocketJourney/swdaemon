@@ -27,7 +27,7 @@ type Model struct {
 }
 
 const (
-	VERSION       = "0.6"
+	VERSION       = "0.7"
 	SERVER        = "https://app.rocketjourney.com"
 	UPDATE_SERVER = "https://s3.rocketjourney.com"
 	UPDATE_PATH   = "/swdaemon/version.json"
