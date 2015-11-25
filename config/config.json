@@ -1,9 +1,9 @@
 {
-    "server": "187.217.176.37",
+    "server": "localhost",
     "port": "3306",
-    "user": "myfelempleado",
-    "password": "myadmfelempsw",
-    "db_name": "sw",
+    "user": "root",
+    "password": "",
+    "db_name": "sportworld",
     "delay": 10,
     "club_id": 15,
     "query":"fecha >= ? and hora >= ? and hora < ?",
