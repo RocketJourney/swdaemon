@@ -89,8 +89,9 @@ func reportAlive(m *model.Model) {
 	s := m.ReadSettings()
 	l4g.Info(s)
 	net.Server = model.SERVER
+	net.AccessToken = s.Access_token
 	pid := fmt.Sprintf("%d", os.Getpid())
-	club := fmt.Sprintf("%d", s.Club_id)
+	club := fmt.Sprintf("%d", s.Spot_id)
 	for {
 		net.ReportAlive(pid, club)
 		delay := (time.Minute * 10)

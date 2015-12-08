@@ -5,7 +5,8 @@ type Settings struct {
 	Port         string
 	User         string
 	Password     string
-	Club_id      int
+	Spot_id      int
+	Access_token string
 	DB_name      string
 	Delay        int
 	Query        string

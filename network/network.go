@@ -11,7 +11,8 @@ import (
 )
 
 type Network struct {
-	Server string
+	Server      string
+	AccessToken string
 }
 
 func (n *Network) SendCheck(way int, club_id int, user_id int) {
@@ -25,7 +26,7 @@ func (n *Network) SendCheck(way int, club_id int, user_id int) {
 	path := n.Server + "/api/v1/clubs/" + strconv.Itoa(club_id) + "/users/" + strconv.Itoa(user_id)
 	request, _ := http.NewRequest("POST", path, bytes.NewBuffer([]byte("{\"check_in\":"+check+"}")))
 	request.Header.Add("Content-Type", "application/json")
-	request.Header.Add("Authorization", "g3QAAAACZAAEZGF0YXQAAAABZAACaWRhAWQABnNpZ25lZG4GAPD6pvVOAQ")
+	request.Header.Add("Authorization", n.AccessToken)
 	client.Do(request)
 }
 
