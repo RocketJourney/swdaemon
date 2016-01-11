@@ -28,7 +28,14 @@ func (n *Network) SendCheck(way int, club_id int, user_id int) {
 	request, _ := http.NewRequest("POST", path, bytes.NewBuffer([]byte("{\"check_in\":"+check+"}")))
 	request.Header.Add("Content-Type", "application/json")
 	request.Header.Add("Authorization", n.AccessToken)
-	client.Do(request)
+	resp, err := client.Do(request)
+	if err == nil {
+		l4g.Info("Success")
+		l4g.Info(resp)
+	} else {
+		l4g.Info("error on response")
+		l4g.Info(err)
+	}
 }
 
 func (n *Network) ReportAlive(pid string, club_id string) {
