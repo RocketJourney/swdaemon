@@ -24,6 +24,7 @@ func (n *Network) SendCheck(way int, club_id int, user_id int) {
 		check = "true"
 	}
 	path := n.Server + "/api/v1/clubs/" + strconv.Itoa(club_id) + "/users/" + strconv.Itoa(user_id)
+	l4g.Info(path)
 	request, _ := http.NewRequest("POST", path, bytes.NewBuffer([]byte("{\"check_in\":"+check+"}")))
 	request.Header.Add("Content-Type", "application/json")
 	request.Header.Add("Authorization", n.AccessToken)

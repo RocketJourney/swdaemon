@@ -84,6 +84,7 @@ func (m *Model) SearchAccess() {
 	m.DateOfLastGet = limitDate
 	for _, r := range access {
 		l4g.Trace("%+v", r)
+		l4g.Info("Sending check params: way_id: %+v spot_id: %+v user_id: %+v", r.WayId, m.RJClubId, r.UserId)
 		m.Net.SendCheck(r.WayId, m.RJClubId, r.UserId)
 	}
 }
