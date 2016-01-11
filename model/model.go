@@ -17,6 +17,7 @@ type Model struct {
 	DB                 gorm.DB
 	DateOfLastGet      time.Time
 	Net                network.Network
+	RJClubId           int
 	Delay              int
 	Query              string
 	TimeFormat         string
@@ -27,7 +28,7 @@ type Model struct {
 }
 
 const (
-	VERSION       = "0.8"
+	VERSION       = "0.9"
 	SERVER        = "https://app.rocketjourney.com"
 	UPDATE_SERVER = "https://s3.rocketjourney.com"
 	UPDATE_PATH   = "/swdaemon/version.json"
@@ -41,6 +42,7 @@ func (m *Model) SetupModel() error {
 	m.DB = db
 	m.Net = network.Network{}
 	m.Net.Server = SERVER
+	m.RJClubId = s.Spot_id
 	l4g.Info("Rocket server: %s", m.Net.Server)
 	m.Delay = s.Delay
 	m.Query = s.Query
@@ -82,7 +84,7 @@ func (m *Model) SearchAccess() {
 	m.DateOfLastGet = limitDate
 	for _, r := range access {
 		l4g.Trace("%+v", r)
-		m.Net.SendCheck(r.WayId, r.ClubId, r.UserId)
+		m.Net.SendCheck(r.WayId, m.RJClubId, r.UserId)
 	}
 }
 
