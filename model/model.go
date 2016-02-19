@@ -28,7 +28,7 @@ type Model struct {
 }
 
 const (
-	VERSION       = "0.11"
+	VERSION       = "0.12"
 	SERVER        = "https://app.rocketjourney.com"
 	UPDATE_SERVER = "https://s3.rocketjourney.com"
 	UPDATE_PATH   = "/swdaemon/version.json"
@@ -79,7 +79,7 @@ func (m *Model) SearchAccess() {
 	limitDate := time.Now()
 	searchlimitHour := limitDate.Format(m.TimeFormat)
 	l4g.Info("Perform search:", m.Query, searchDate, searchHour, searchlimitHour)
-	m.DB.Where(m.Query, searchDate, searchHour, limitDate).Find(&access)
+	m.DB.Where(m.Query, searchDate, searchHour, searchlimitHour).Find(&access)
 	l4g.Info("Number of access found: %+v", len(access))
 	m.DateOfLastGet = limitDate
 	for _, r := range access {
