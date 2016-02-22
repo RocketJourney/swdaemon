@@ -38,7 +38,7 @@ func (m *Model) SetupModel() error {
 	s := m.ReadSettings()
 	l4g.Info(s)
 	db, err := gorm.Open("mysql", s.User+":"+s.Password+"@tcp("+s.Server+":"+s.Port+")/"+s.DB_name+"?charset=utf8&parseTime=True&loc=Local")
-	db.LogMode(false)
+	db.LogMode(true)
 	m.DB = db
 	m.Net = network.Network{}
 	m.Net.Server = SERVER
@@ -72,16 +72,19 @@ func (m *Model) SearchAccess() {
 
 	access := []Register{}
 	const shortForm = "2006-01-02"
-	searchDate := m.DateOfLastGet.Format(shortForm)
-	searchHour := m.DateOfLastGet.Format(m.TimeFormat)
-	l4g.Trace("Searching access after: %+v", m.DateOfLastGet)
+	offsetDateOfLastGet := m.DateOfLastGet
+	offsetDateOfLastGet.Add(-5 * time.Second)
+	searchDate := offsetDateOfLastGet.Format(shortForm)
+	searchHour := offsetDateOfLastGet.Format(m.TimeFormat)
+	l4g.Trace("Searching access with offset after: %+v", offsetDateOfLastGet)
 	//m.DB.Select("idSentido, idUn, idPersona").Where(m.Query, searchDate, searchHour).Find(&access)
-	limitDate := time.Now()
-	searchlimitHour := limitDate.Format(m.TimeFormat)
+	//limitDate := time.Now()
+	offSetLimitDate := time.Now().Add(-5 * time.Second)
+	searchlimitHour := offSetLimitDate.Format(m.TimeFormat)
 	l4g.Info("Perform search:", m.Query, searchDate, searchHour, searchlimitHour)
 	m.DB.Where(m.Query, searchDate, searchHour, searchlimitHour).Find(&access)
 	l4g.Info("Number of access found: %+v", len(access))
-	m.DateOfLastGet = limitDate
+	m.DateOfLastGet = offSetLimitDate
 	for _, r := range access {
 		l4g.Trace("%+v", r)
 		l4g.Info("Sending check params: way_id: %+v spot_id: %+v user_id: %+v", r.WayId, m.RJClubId, r.UserId)
