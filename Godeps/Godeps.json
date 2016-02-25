@@ -8,7 +8,7 @@
 			"Rev": "364fb577de68fb646c4cb39cc0e09c887ee16376"
 		},
 		{
-			"ImportPath": "code.google.com/p/log4go",
+			"ImportPath": "github.com/alecthomas/log4go",
 			"Comment": "go.weekly.2012-02-22-1",
 			"Rev": "c3294304d93f48a37d3bed1d382882a9c2989f99"
 		},

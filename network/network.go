@@ -2,7 +2,7 @@ package network
 
 import (
 	"bytes"
-	l4g "code.google.com/p/log4go"
+	l4g "github.com/alecthomas/log4go"
 	"errors"
 	"fmt"
 	"io/ioutil"

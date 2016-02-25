@@ -1,7 +1,7 @@
 package routines
 
 import (
-	l4g "code.google.com/p/log4go"
+	l4g "github.com/alecthomas/log4go"
 	"encoding/json"
 	"fmt"
 	"github.com/inconshreveable/go-update"
